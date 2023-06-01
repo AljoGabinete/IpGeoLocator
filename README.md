@@ -21,10 +21,10 @@ IP Geo Locator is a mobile application developed using React Native. It allows y
    git clone https://github.com/your-username/your-repo.git
 2. Install the dependencies:
 
-    cd your-repo
-    npm install
+    -cd your-repo
+    -npm install
 
 3. Start the server 
-    npx react-native start
+    -npx react-native start
     
 4. Open the app on your Android or iOS device using the Expo Go app or an emulator.
