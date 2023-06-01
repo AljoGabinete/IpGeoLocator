@@ -13,7 +13,6 @@ const ipDetails = () => {
     const fetchIpDetails = async () => {
       try {
         const details = await getIpDetails(ip);
-        console.log(details);
         const transformedDetails = await transformIpDetails(details);
         const ipLocation =
           transformedDetails &&
