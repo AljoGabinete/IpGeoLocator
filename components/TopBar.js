@@ -78,7 +78,7 @@ const TopBar = () => {
 
   return (
     <SafeAreaView style={styles.topBar}>
-      <Text style={styles.header}> IP Locator</Text>
+      <Text style={styles.header}> IP Geo Locator</Text>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Enter an IP Address"
