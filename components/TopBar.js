@@ -73,6 +73,7 @@ const TopBar = () => {
   const handleHistoryPress = ipHistory => {
     setIp(ipHistory);
     setIsModalVisible(false);
+    setInputValue(ipHistory);
   };
 
   return (

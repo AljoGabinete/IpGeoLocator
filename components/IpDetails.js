@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {IpContext} from '../providers/IpProvider';
 import {getIpDetails} from '../services/IpServices';
 import {LocationContext} from '../providers/LocationProvider';
@@ -11,14 +11,20 @@ const ipDetails = () => {
 
   useEffect(() => {
     const fetchIpDetails = async () => {
-      const details = await getIpDetails(ip);
-      const transformedDetails = await transformIpDetails(details);
-      const ipLocation =
-        transformedDetails &&
-        transformedDetails.find(item => item.key === 'loc');
-      const ipLocationArray = ipLocation.value.split(',');
-      setLocation(ipLocationArray);
-      setIpDetails(transformedDetails);
+      try {
+        const details = await getIpDetails(ip);
+        console.log(details);
+        const transformedDetails = await transformIpDetails(details);
+        const ipLocation =
+          transformedDetails &&
+          transformedDetails.find(item => item.key === 'loc');
+        const ipLocationArray = ipLocation.value.split(',');
+        setLocation(ipLocationArray);
+        setIpDetails(transformedDetails);
+      } catch (error) {
+        Alert.alert('Error', 'Please Enter a Valid IP Address');
+        return;
+      }
     };
     fetchIpDetails();
   }, [ip]);
