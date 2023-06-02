@@ -27,4 +27,3 @@ IP Geo Locator is a mobile application developed using React Native. It allows y
 3. Start the server 
     - npx react-native start
     
-4. Open the app on your Android or iOS device using the Expo Go app or an emulator.
